@@ -1,0 +1,23 @@
+<div class="col-sm-3 col-md-2 affix-sidebar" ng-controller="menuController">
+	<div class="sidebar-nav">
+		<div class="navbar navbar-default" role="navigation">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      </button>
+	      <span class="visible-xs navbar-brand">MEATSPIN </span>
+	    </div>
+	    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+	      <ul class="nav navbar-nav" id="sidenav01">
+	        <li ng-class="getClass('/stats')"><a href="#/stats"><span class="glyphicon glyphicon-stats"></span> <b>STATS</b></a></a></li>
+			<li ng-class="getClass('/servos')"><a href="#/servos"><span class="glyphicon glyphicon-repeat"></span> <b>SERVOS</b></a></a></li>
+			<li ng-class="getClass('/stream')"><a href="#/stream"><span class="glyphicon glyphicon-hd-video"></span> <b>STREAM</b></a></a></li>
+			<li ng-class="getClass('/logs')"><a href="#/logs"><span class="glyphicon glyphicon-console"></span> <b>LOGS</b></a></a></li>
+			<li ng-class="getClass('/control')"><a href="#/control"><span class="glyphicon glyphicon-screenshot"></span> <b>CONTROL</b></a></a></li>
+	      </ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>

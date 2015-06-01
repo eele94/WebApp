@@ -1,0 +1,42 @@
+<pane title="Stream" icon="glyphicon glyphicon-hd-video">
+	<p>
+		<div class="embed-responsive embed-responsive-16by9">
+			<object bgcolor="#000000" data="http://www.twitch.tv/swflibs/TwitchPlayer.swf" height="378" id="clip_embed_player_flash" type="application/x-shockwave-flash" width="570"><param name="movie" value="http://www.twitch.tv/swflibs/TwitchPlayer.swf" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="allowFullScreen" value="true" /><param name="flashvars" value="channel=fishplayspokemon&auto_play=false&start_volume=25&videoId=v3953205&device_id=b3d25c6e9460341f" /></object>
+		</div>
+	</p>
+	<p>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		  	Options 
+		  	<span class="pull-right glyphicon glyphicon-menu-hamburger" aria-hidden="true" style="font-size:21px;" data-toggle="collapse" data-target="#streampanelbody"></span> 
+		  </div>
+			  <div class="collapse panel-body" id="streampanelbody">
+
+				<div class="input-group">
+					<span class="input-group-addon" id="sizing-addon2">
+ 						<span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="font-size:18px;"></span> 
+					</span>
+					<select class="form-control">
+						<option>240p</option>
+						<option>480p</option>
+						<option>720p</option>
+						<option>1080p</option>
+					</select>
+				</div>
+
+				<br/>
+
+				<div class="input-group" data-toggle="tooltip" title="Change the time between frames">
+					<span class="input-group-addon" id="sizing-addon2">
+ 						<span class="glyphicon glyphicon-download" aria-hidden="true" style="font-size:18px;"></span> 
+					</span>
+					<input type="text" class="form-control" placeholder="Update Time (Milliseconds)" value="1000">
+					<span class="input-group-addon" id="sizing-addon2">
+ 						Milliseconds
+					</span>
+				</div>
+
+			  </div>
+		</div>
+	</p>
+</pane>

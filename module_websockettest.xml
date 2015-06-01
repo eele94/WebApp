@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_websockettest" default="compile.module.websockettest">
+  <dirname property="module.websockettest.basedir" file="${ant.file.module_websockettest}"/>
+  
+  <property name="module.jdk.home.websockettest" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.websockettest" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.websockettest" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.websockettest" value="-encoding windows-1252 -source 1.7 ${compiler.args}"/>
+  
+  <property name="websockettest.output.dir" value="${module.websockettest.basedir}/out/production/WebSocketTest"/>
+  <property name="websockettest.testoutput.dir" value="${module.websockettest.basedir}/out/test/WebSocketTest"/>
+  
+  <path id="websockettest.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="websockettest.module.production.classpath">
+    <path refid="${module.jdk.classpath.websockettest}"/>
+    <path refid="library.tomcat_8.0.21.classpath"/>
+    <path refid="library.websocket-1.0.classpath"/>
+  </path>
+  
+  <path id="websockettest.runtime.production.module.classpath">
+    <pathelement location="${websockettest.output.dir}"/>
+    <path refid="library.websocket-1.0.classpath"/>
+  </path>
+  
+  <path id="websockettest.module.classpath">
+    <path refid="${module.jdk.classpath.websockettest}"/>
+    <pathelement location="${websockettest.output.dir}"/>
+    <path refid="library.tomcat_8.0.21.classpath"/>
+    <path refid="library.websocket-1.0.classpath"/>
+  </path>
+  
+  <path id="websockettest.runtime.module.classpath">
+    <pathelement location="${websockettest.testoutput.dir}"/>
+    <pathelement location="${websockettest.output.dir}"/>
+    <path refid="library.tomcat_8.0.21.classpath"/>
+    <path refid="library.websocket-1.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.websockettest">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.websockettest">
+    <patternset refid="excluded.from.module.websockettest"/>
+  </patternset>
+  
+  <path id="websockettest.module.sourcepath">
+    <dirset dir="${module.websockettest.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.websockettest" depends="compile.module.websockettest.production,compile.module.websockettest.tests" description="Compile module WebSocketTest"/>
+  
+  <target name="compile.module.websockettest.production" depends="register.custom.compilers" description="Compile module WebSocketTest; production classes">
+    <mkdir dir="${websockettest.output.dir}"/>
+    <javac2 destdir="${websockettest.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.websockettest}/javac">
+      <compilerarg line="${compiler.args.websockettest}"/>
+      <bootclasspath refid="websockettest.module.bootclasspath"/>
+      <classpath refid="websockettest.module.production.classpath"/>
+      <src refid="websockettest.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.websockettest"/>
+    </javac2>
+    
+    <copy todir="${websockettest.output.dir}">
+      <fileset dir="${module.websockettest.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.websockettest.tests" depends="register.custom.compilers,compile.module.websockettest.production" description="compile module WebSocketTest; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.websockettest" description="cleanup module">
+    <delete dir="${websockettest.output.dir}"/>
+    <delete dir="${websockettest.testoutput.dir}"/>
+  </target>
+</project>

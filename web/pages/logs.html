@@ -1,0 +1,41 @@
+<pane title="Logs" icon="glyphicon glyphicon-console">
+	<p>
+		<div class="panel panel-default">
+		  <div class="panel-heading">Options</div>
+		  <div class="panel-body">
+		    <button type="button" class="btn btn-default btn-md" ng-click="clearLogs()">
+				<span class="glyphicon glyphicon-erase" aria-hidden="true" style="font-size:20px;"></span> Clear logs
+			</button>
+			<button type="button" class="btn btn-default btn-md" ng-click="saveLogs()">
+				<span class="glyphicon glyphicon-floppy-save" aria-hidden="true" style="font-size:20px;"></span> Save logs
+			</button>
+		  </div>
+		</div>
+	</p>
+	<p>
+		<ul class="nav nav-tabs" role="tablist">
+    		<li ng-class="isActive(0)"><a href="" ng-click="setLogFilterVar()">ALL&nbsp;&nbsp;<span class="badge">{{logCount}}</span></a></li>
+    		<li ng-class="isActive(1)"><a href="" ng-click="setLogFilterVar('info')">General&nbsp;&nbsp;<span class="badge progress-bar-info">{{infoCount}}</span></a></li>
+    		<li ng-class="isActive(2)"><a href="" ng-click="setLogFilterVar('error')">Errors&nbsp;&nbsp;<span class="badge progress-bar-danger">{{errorCount}}</span></a></li>
+    		<li ng-class="isActive(3)"><a href="" ng-click="setLogFilterVar('warning')">Warnings&nbsp;&nbsp;<span class="badge progress-bar-warning">{{warningCount}}</span></a></li>   
+  		</ul>
+	</p>
+	<p>
+		<table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>ID</th>
+		        <th>Type</th>
+		        <th>Message</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		    	<tr ng-repeat="log in logs | filter:logFilter" class="{{log.type | getBootstrapType}}">
+				  <td>{{log.id}}</td>
+				  <td>{{log.type}}</td>
+				  <td>{{log.message}}</td>
+				</tr>		     
+		    </tbody>
+		  </table>
+	</p>
+</pane>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp">
+	<head>	  
+		<title>Meatspin</title>
+		
+	    <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,800' rel='stylesheet' type='text/css'>
+		-->
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+		<script src="sweetalert/sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="knob/dist/jquery.knob.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-websocket.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
+
+		<script src="app/main.js"></script>
+		<script src="app/logs.js"></script>
+		<script src="app/routes.js"></script>
+		<script src="app/logController.js"></script>
+		<script src="app/directives.js"></script>
+
+  	</head>
+	<body ng-controller="mainController">
+		<topbar></topbar>
+		
+		<div class="row affix-row">
+			<sidebar></sidebar>
+
+			<div class="col-sm-9 col-md-10 affix-content">
+				<ng-view></ng-view>
+			</div>
+		</div>
+	
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

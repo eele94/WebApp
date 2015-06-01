@@ -1,0 +1,153 @@
+
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px){
+  .affix-content .container {
+    width: 700px;
+  }   
+
+  html,body{
+    padding:0;
+    margin:0;
+    background-color: #eee;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Open Sans', 'Verdana', 'Arial', sans-serif !important;
+  }
+  .container h3 { font-size:30px !important; }
+  .glyphicon 
+  { 
+    font-size: 32px; 
+    vertical-align:middle;
+  }
+  .container .glyphicon { vertical-align: bottom !important; }
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .page-header
+  {
+    padding-top:10px;  
+    padding-bottom:10px;
+  }
+  #topbar
+  {
+    background-color:#fff;
+    height:59px;
+    width:100%;
+    border-bottom:1px solid #dcdcdc;
+    line-height:59px;
+  }
+  #topbar span
+  {
+    font-weight: bold;
+    font-style: italic;
+    font-size:25px;
+    margin-left:50px;
+    text-shadow: 1px 1px #fff;
+  }
+  .sidebar-nav{
+    position:fixed; 
+    width:100%;
+    height:100%;
+    background-color:#fafafa;
+  }
+  .affix-sidebar{
+    padding-right:0; 
+    font-size:small;
+    padding-left: 0;
+  }  
+  .affix-row, .affix-container, .affix-content{
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;    
+  } 
+  .affix-content{
+    background-color:#ededed; 
+  } 
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar{
+    border-radius:0; 
+    margin-bottom:0; 
+    border:0;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+    border-bottom:1px solid #dcdcdc;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-size:22px;
+    font-family: 'Open Sans' !important;
+  }  
+  .sidebar-nav .navbar li a b {
+    margin-left:20px;
+  }
+}
+
+@media (min-width: 769px){
+  .affix-content .container {
+    width: 600px;
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }  
+}
+
+@media (min-width: 992px){
+  .affix-content .container {
+  width: 900px;
+  }
+    .affix-content .container .page-header{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1220px){
+  .affix-row{
+    overflow: hidden;
+  }
+
+  .affix-content{
+    overflow: auto;
+  }
+
+  .affix-content .container {
+    width: 1000px;
+  }
+
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .affix-content{
+    padding-right: 30px;
+    padding-left: 30px;
+  }  
+  .affix-title{
+    border-bottom: 1px solid #ecf0f1; 
+    padding-bottom:10px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-collapse{
+    padding: 0;
+  }
+  .sidebar-nav .navbar li a:hover {
+    background-color: #428bca;
+    color: white;
+  }
+  .sidebar-nav .navbar li a > .caret {
+    margin-top: 8px;
+  }  
+}
