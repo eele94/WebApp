@@ -20,7 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.21" level="application_server_libraries" />
-    <orderEntry type="library" name="WebSocket-1.0" level="project" />
-    <orderEntry type="library" name="json_simple-1.1" level="project" />
+    <orderEntry type="library" exported="" name="WebSocket-1.0" level="project" />
+    <orderEntry type="library" exported="" name="json_simple-1.1" level="application" />
   </component>
 </module>

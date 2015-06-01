@@ -69,10 +69,9 @@ app.controller('menuController', function($scope, $location){
 	};
 });
 
-app.controller('servoController', function($scope){
+app.controller('servoController', function($scope, $rootScope, AppData){
 	$scope.$on('message', function(event, args) {
 		$scope.$apply(function() {
-			// hoi ik ben niels
 			$scope.kaas = args.Servo1;
 		});
 	});

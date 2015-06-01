@@ -11,11 +11,8 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.websocket-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/tyrus-server.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/tyrus-client.jar!/" />
-      <root url="jar://C:/opencv/build/java/opencv-2411.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://C:/opencv/build/java/opencv-2411.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

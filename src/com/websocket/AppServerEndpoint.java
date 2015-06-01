@@ -2,23 +2,22 @@ package com.websocket;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by eele on 25-4-2015.
  */
+
 @ServerEndpoint(value = "/websocket/app")
 public class AppServerEndpoint {
+    static final String jsonFile = "C:/Users/eele/IdeaProjects/WebApp/data.json";
 
     private static String readFile(){
         String result = "";
-        FileReader fileReader = null;
+        FileReader fileReader;
         BufferedReader textReader = null;
-        try {
-            fileReader = new FileReader("C:\\Users\\eele\\IdeaProjects\\WebSocketTest\\data.json");
+            try {
+            fileReader = new FileReader(jsonFile);
             textReader = new BufferedReader(fileReader);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -36,10 +35,9 @@ public class AppServerEndpoint {
     public void onOpen(Session session, EndpointConfig endpointConfig) {
         RemoteEndpoint.Basic remoteEndpointBasic = session.getBasicRemote();
         session.addMessageHandler(new EchoMessageHandler(remoteEndpointBasic));
-
         try {
             if(remoteEndpointBasic != null){
-                String msg = "";
+                String msg;
                 String msgOld = readFile();
                 remoteEndpointBasic.sendText(msgOld);
                 while(true){

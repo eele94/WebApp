@@ -11,6 +11,7 @@ package com.application;
         import javax.swing.event.ChangeListener;
         import java.awt.*;
         import java.io.*;
+        import java.net.URL;
         import java.util.Random;
 
 public class Program
@@ -35,7 +36,8 @@ public class Program
                 obj.put("Servo1", source.getValue());
                 PrintWriter writer = null;
                 try {
-                    writer = new PrintWriter("data.json", "UTF-8");
+                    System.out.println(System.getProperty("user.dir") + File.separator + "data.json");
+                    writer = new PrintWriter(System.getProperty("user.dir") + File.separator + "data.json", "UTF-8");
                 } catch (FileNotFoundException e1) {
                     e1.printStackTrace();
                 } catch (UnsupportedEncodingException e1) {
