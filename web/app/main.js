@@ -2,7 +2,7 @@
  -- Module --
 */
 
-var  app = angular.module('myApp', ['ngRoute'])
+var  app = angular.module('myApp', ['ngRoute']);
 
 
 app.factory('AppData', function($rootScope) {
@@ -69,7 +69,7 @@ app.controller('menuController', function($scope, $location){
 	};
 });
 
-app.controller('servoController', function($scope, $rootScope, AppData){
+app.controller('servoController', function($scope){
 	$scope.$on('message', function(event, args) {
 		$scope.$apply(function() {
 			$scope.kaas = args.Servo1;
